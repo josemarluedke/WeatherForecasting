@@ -1,3 +1,13 @@
-<header>
-  <h1>See weather forecast for <a href="/Porto Alegre">Porto Alegre</a></h1>
+<header class="center">
+  <h1>See weather forecast for</h1>
+    <div class="home">
+      <div class="left"><h1><a href="/Porto Alegre">Porto Alegre</a> or </h1></div>
+      <div class="left search">
+        <form method="GET" onsubmit="location.href = document.getElementById('city').value; return false;">
+          <input type="text" name="city" id="city" />
+          <input type="submit" value="GO!" />
+        </form>
+      </div>
+      <div class="clear"></div>
+    </div>
 </header>
