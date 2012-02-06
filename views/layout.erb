@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather forecasting for <%= @city %></title>
+    <style type="text/css" media="screen">
+      body          {font-family: verdana; background: #F0F0F0; width: 650px; margin: auto; font-size: 12px;}
+      .current img  {float: left; margin-right: 20px;}
+      .current h1   {font-size: 110px;}
+      .clear        {clear: both}
+      .forecasting .item {width: 100px; margin-right: 5px; float: left; text-align: center;}
+      a             {color: #037; text-decoration: none; }
+      a:hover       {text-decoration: underline;}
+      footer        {margin-top: 50px; text-align: center;}
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Weather for <%= @city %></h1>
+    </header>
+    <%= yield %>
+    <footer>
+      <p>
+        Weather Forecasting with <a href="http://ruby-lang.org">Ruby</a>, <a href="http://sinatrarb.com">Sinatra</a> and <a href="https://github.com/attack/barometer">Barometer</a> - Powered by <a href="http://josemarluedke.com">Josemar Davi Luedke</a>
+      </p>
+    </footer>
+  </body>
+</html>

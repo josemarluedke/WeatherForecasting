@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Weather forecasting for <%= @city %></title>
-  </head>
-  <body style="font-family: verdana;">
-    <h1>Weather for <%= @city %></h1>
-    <div>
-      <img src="images/<%= @weather.current.icon %>.png" style="float: left; margin-right: 20px;" />
-      <h1 style="font-size: 110px;"><%= @weather.current.temperature.c %>°C</h1>
-      <div style="clear: both"></div>
+<section class="current">
+  <img src="images/<%= @weather.current.icon %>.png" />
+  <h1><%= @weather.current.temperature.c %>°C</h1>
+</section>
+<section class="forecasting">
+  <h1 class="clear">Forecasting:</h1>
+  <% @weather.forecast.each do |f| %>
+    <div class="item">
+      <h4><%= Time.new(f.valid_start_date.year, f.valid_start_date.month, f.valid_start_date.day).strftime "%a" %></h4>
+      <img src="images/<%= f.icon %>.png" width="80" />
+      <br />
+      <b><%= f.high.c %>°</b>
+      <%= f.low.c %>°
     </div>
-    <h1>Forecast:</h1>
-    <div>
-      <% @weather.forecast.each do |f| %>
-        <div style="width: 100px; margin-right: 5px; float: left; text-align: center;">
-          <h4><%= Time.new(f.valid_start_date.year, f.valid_start_date.month, f.valid_start_date.day).strftime "%a" %></h4>
-          <img src="images/<%= f.icon %>.png" width="80" />
-          <br />
-          <b><%= f.high.c %>°</b>
-          <%= f.low.c %>°
-        </div>
-      <% end %>
-      <div style="clear: both"></div>
-    </div>
-  </body>
-</html>
+  <% end %>
+  <div class="clear"></div>
+</section>
