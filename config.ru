@@ -1,2 +1,2 @@
 require './server'
-rum Sinatra::Aplication
+rum Sinatra::Application
