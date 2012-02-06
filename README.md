@@ -5,7 +5,7 @@ Weather Forecasting with Ruby, Sinatra and Barometer
 
 Demo
 ----
-http://weatherforecasting.heroku.com/
+http://weatherforecasting.heroku.com/Porto%20Alegre
 
 License
 -------
